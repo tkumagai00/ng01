@@ -1,0 +1,37 @@
+<div
+  id="downloadPanel"
+  class="panel panel-default myPanel mySmallPanel">
+
+  <!--ダイアログボックスのタイトルバー-->
+  <div class="panel-heading text-center myPanelTitlebar">
+    ダウンロード
+  </div>
+
+  <!--ダイアログボックスの内容-->
+  <div class="panel-body">
+    <!--メッセージ表示欄-->
+    <div
+      class="alert alert-info text-center"
+      role="alert">
+      {{dialogMsg}}
+    </div>
+
+    <!--プログレスバー-->
+    <progressbar
+      class="progress-striped active"
+      [animate]="true"
+      [value]="progress"
+      type="success">
+    </progressbar>
+
+    <!--エラー発生時のボタン-->
+    <button
+      *ngIf="!(isWaiting)"
+      (click)="onClickButton($event)"
+      class="btn btn-success btn-block">
+      Ｏ　Ｋ
+    </button>
+
+  </div>
+
+</div>

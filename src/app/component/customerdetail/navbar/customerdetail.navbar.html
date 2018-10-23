@@ -1,0 +1,55 @@
+<!-------------------------->
+<!--ナビゲーションバー-->
+<!-------------------------->
+<nav
+  class="navbar navbar-default navbar-fixed-top myNavbar"
+  role="navigation">
+  <div class="navbar-header">
+    <!--左端エリア（ブランド表示用）-->
+    <div class="navbar-brand"
+         (click)="$event.preventDefault()">
+      <a href="#"
+         (click)="onMenuClick('back',$event)">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        戻る　
+      </a>
+    </div>
+    <!--折りたたみメニュー-->
+    <button type="button" class="navbar-toggle"
+            data-toggle="collapse"
+            (click)="isCollapsed = !isCollapsed">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <!--メニュー項目の定義-->
+  <div
+      [collapse]="isCollapsed"
+       class="collapse navbar-collapse"
+       (click)="$event.preventDefault();isCollapsed=!isCollapsed">
+
+    <ul class="nav navbar-nav">
+      <!--報告入力-->
+      <li class="navbar-separater-RL">
+        <a href="#"
+           (click)="onMenuClick('report',$event);isCollapsed=true" id="menuReport">
+          報告入力
+        </a>
+      </li>
+      <!--報告履歴-->
+      <li class="navbar-separater-R">
+        <a href="#" (click)="onMenuClick('history',$event)" id="menuHistory">
+          報告履歴
+        </a>
+      </li>
+      <!--ログアウト-->
+      <li class="navbar-separater-R">
+        <a href="#" (click)="onMenuClick('logout',$event)" id="menuLogout">
+          ログアウト
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,4 @@
+<!--<div >送信待ち{{(uploadItems$ | async)?.length}}件</div>-->
+<div *ngIf="(uploadItems$ | async)?.length">
+  送信待ち{{(uploadItems$ | async)?.length}}件
+</div>

@@ -1,0 +1,47 @@
+/*表示位置（水平方向中央）*/
+.myPanel {
+  margin: 0 auto 0 auto;
+  position: relative;
+  top: -50px;
+}
+
+/*パネルのサイズ（小）*/
+.mySmallPanel {
+  width: 320px;
+}
+
+/* タイトルバー*/
+.myPanelTitlebar {
+  background: steelblue none !important;
+  color: white !important;
+}
+
+/*　人アイコン　*/
+.myLoginIcon {
+  font-size: 10em;
+  color: silver;
+}
+
+/*ログインボタン*/
+.btn-block {
+  height: 2.3em;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0;
+}
+
+/*snapshotボタン*/
+.btn-lg {
+  height: 2.3em;
+  font-size: 1.5em;
+  line-height: 100%;
+  font-weight: bold;
+  padding: 18px 18px 35px 18px;
+  margin: 20px auto 30px auto;
+}
+
+.btn-white {
+  background-color: white;
+  color: royalblue;
+  border-color: royalblue;
+}

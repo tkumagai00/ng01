@@ -1,0 +1,44 @@
+<!-------------------------->
+<!--ナビゲーションバー-->
+<!-------------------------->
+<nav
+  class="navbar navbar-default navbar-fixed-top myNavbar"
+  id="logNav"
+  role="navigation">
+  <div class="block3">
+    <div class="navbar-header">
+      <!--左端エリア-->
+      <div class="navbar-brand"
+           (click)="$event.preventDefault()">
+        <a href="#"
+           (click)="onMenuClick('back',$event)">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          ログアウト　
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="block3 textCener">
+    <div id="headerTitle">顧客管理システムのログ監視</div>
+  </div>
+
+</nav>
+<div>
+  <accordion>
+    <accordion-group
+      *ngFor="let log of logArray"
+    >
+      <!--タイトル部分-->
+      <div accordion-heading>
+        <p class="timeStamp">{{log.timeStamp}}</p>
+        <p class="shortMessage">{{log.shortMessage}}<br>
+          クリックしてさらに表示▶</p>
+      </div>
+
+      <!--詳細標示部分-->
+      <p class="message">{{log.message}}</p>
+      <p class="userAgent">{{log.userAgent}}</p>
+    </accordion-group>
+
+  </accordion>
+</div>

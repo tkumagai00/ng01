@@ -1,0 +1,37 @@
+/*　テーブル内の文字　*/
+tbody {
+  font-weight: normal;
+}
+
+/* 行の着（マウスオーバー） */
+.myTableHover tr:hover {
+  background: steelblue none;
+  color: white;
+}
+
+/*バッジ（報告件数表示）*/
+.myBadge {
+  background-color: orangered;
+  font-size: 1.2em;
+  padding: 0 0.5em;
+  vertical-align: text-bottom;
+}
+
+/*==============================*/
+/*画面幅767px以下の時のCSS*/
+/*==============================*/
+@media (max-width: 767px) {
+
+  /* 顧客リストの顧客名文字*/
+  .myMobileLargeText {
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+
+  /*バッジ（報告件数表示）*/
+  .myBadge {
+    font-size: 1.6em;
+  }
+
+}
+

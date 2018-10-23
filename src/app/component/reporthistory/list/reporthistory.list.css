@@ -1,0 +1,35 @@
+
+.table {
+  table-layout: fixed;
+  border-width: 0;
+}
+
+.table td {
+  white-space: normal;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+#pc_table td.td1 {
+  width: 4em;
+}
+
+#pc_table td.td2 {
+  width: 30%;
+}
+
+#mobile_table td.td1 {
+  width: 25%
+}
+
+.small {
+  font-size: 0.7em;
+}
+
+.middle {
+  font-size: 1.2em;
+}

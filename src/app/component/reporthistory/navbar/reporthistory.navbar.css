@@ -1,0 +1,15 @@
+#headerTitle {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 16px;
+  margin: 16px auto auto auto;
+}
+
+.block3 {
+  width: 33%;
+  float: left;
+}
+
+.textCener {
+  text-align: center;
+}

@@ -1,0 +1,122 @@
+/* bootstrap cssのインポート*/
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
+
+/*==============================*/
+/* 全ページ共通 */
+/*==============================*/
+/*　文字　*/
+#myBody {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 130%;
+  font-family: sans-serif;
+  padding-Top: 50px;
+}
+
+/*==============================*/
+/* ナビゲーションバー*/
+/*==============================*/
+/*配色*/
+#myBody .myNavbar {
+  background: steelblue none;
+  color: white;
+}
+
+#mybody admin-root .myNavbar {
+  background: maroon none;
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+/*メニュー項目の文字*/
+#myBody .navbar-brand a,
+#myBody .navbar-brand label,
+#myBody .navbar-nav li a {
+  color: white;
+  font-weight: bold;
+}
+
+/*メニュー項目の文字（マウスオーバー時）*/
+#myBody .navbar-brand a:hover,
+#myBody .navbar-nav li a:hover {
+  color: red;
+  background-color: silver;
+}
+
+/*左端表示エリア位置*/
+.navbar-brand {
+  padding: 0 10px;
+}
+
+/*左端表示エリア文字*/
+.navbar-brand a {
+  padding: 15px;
+  display: block;
+}
+
+/*検索文字入力欄の位置とサイズ*/
+.mySearchBox {
+  margin: 4px 5px;
+  height: 42px;
+  padding: 4px;
+}
+
+/*メニュー項目の文字*/
+.navbar-brand a,
+.navbar-nav li a {
+  color: white;
+  font-weight: bold;
+}
+
+/*メニュー項目の文字（マウスオーバー時）*/
+.navbar-brand a:hover,
+.navbar-nav li a:hover {
+  color: red;
+  background-color: silver;
+}
+
+/*折りたたみメニュー内部の線の色*/
+.navbar-header button .icon-bar {
+  background-color: white;
+}
+
+/*折りたたみメニュー枠線の太さ*/
+.navbar-header .navbar-toggle {
+  border-width: 3px;
+}
+
+/*折りたたみメニュー項目の表示エリア*/
+.navbar-collapse {
+  padding: 0;
+}
+
+/*折りたたみメニュー項目の表示エリア*/
+.navbar-collapse ul {
+  margin: 0;
+}
+
+/*メニュー項目間の区切り線*/
+.navbar-separater-RL {
+  border-right: solid 2px silver;
+  border-left: solid 2px silver;
+}
+
+.navbar-separater-R {
+  border-right: solid 2px silver;
+}
+
+/*==============================*/
+/*画面幅767px以下の時のCSS*/
+/*==============================*/
+@media (max-width: 767px) {
+  /*メニュー項目*/
+  .navbar-nav li a,
+  .mySelectTable td {
+    background-color: lightsteelblue;
+    padding: 20px 15px;
+    color: black;
+  }
+}

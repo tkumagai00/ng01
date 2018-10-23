@@ -1,0 +1,29 @@
+/*　営業報告の枠　*/
+.myReportFrame {
+  outline: darkgray solid 1px;
+  margin: 0 0 1em 0;
+  font-weight: bold;
+  padding: 0;
+  line-height: 150%;
+}
+
+/*　営業報告ヘッダー　*/
+.myReportHeader {
+  background-color: lightsteelblue;
+  padding: 0.5em;
+}
+
+/*　営業報告本文　*/
+.myReportBody {
+  word-break: break-all;
+  background-color: whitesmoke;
+  padding: 0.5em;
+}
+
+/*　添付写真　*/
+.myImage {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+

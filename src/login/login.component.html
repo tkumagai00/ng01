@@ -1,0 +1,75 @@
+<div class="panel panel-default myPanel mySmallPanel">
+
+  <!--ヘッダ-->
+  <div class="panel-heading text-center myPanelTitlebar">
+    ログイン
+  </div>
+
+  <div class="panel-body" style="text-align: center">
+    <!--エラー通知-->
+    <alert type="danger" dismissible="true"
+           *ngIf="alertMsg"
+           (click)="uploadErrorLog()"
+    >
+      <span [innerHtml]="alertMsg"></span>
+    </alert>
+
+    <!--自動復元の設定-->
+    <button type="button" class="btn-lg btn-white"
+            *ngIf="autoRestore ==='disable'"
+            (click)="autoRestore='enable';onClickButton()">
+      自動復元OFF
+    </button>
+
+    <button type="button" class="btn-lg btn-primary"
+            *ngIf="autoRestore ==='enable'"
+            (click)="autoRestore='disable';onClickButton()">
+      自動復元ON
+    </button>
+    <br>
+
+    <!--人型アイコン-->
+    <div class="text-center">
+      <span class="glyphicon glyphicon-user myLoginIcon"></span>
+    </div>
+    <br>
+
+    <form id="loginForm">
+      <!--ID入力欄-->
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-user"></span>
+        </span>
+        <input type="text"
+               name="userId"
+               class="form-control"
+               placeholder="ユーザーIDを入力"
+               [(ngModel)]="userId"
+        >
+      </div>
+      <br>
+      <!--パスワード入力欄-->
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-lock"></span>
+        </span>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="パスワードを入力"
+          [(ngModel)]="password"
+        >
+      </div>
+      <br>
+      <!--ログインボタン-->
+      <button
+        id="loginButton"
+        class="btn btn-success btn-block"
+        [disabled]="!(userId && password)"
+        (click)="submit()">
+        ログイン
+      </button>
+    </form>
+  </div>
+</div>

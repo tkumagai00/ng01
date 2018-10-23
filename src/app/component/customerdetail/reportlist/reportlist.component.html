@@ -1,0 +1,15 @@
+<!-- 報告の内容 -->
+<div *ngFor="let report of reports" class="myReportFrame">
+  <div class="myReportHeader">
+    {{report.timeStamp| i18nDate: (locale)}}
+    <br>
+    {{report.title}}
+  </div>
+  <div class="myReportBody">
+    {{report.reportStr}}
+  </div>
+  <div *ngIf="report.resizePhoto">
+    <img [src]="report.resizePhoto" class="myImage">
+  </div>
+</div>
+

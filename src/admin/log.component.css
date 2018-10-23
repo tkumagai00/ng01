@@ -1,0 +1,43 @@
+.timeStamp {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.shortMessage {
+  font-size: 14px;
+  color: maroon;
+}
+
+.message {
+  font-size: 14px;
+  color: black;
+}
+
+.userAgent {
+  font-size: 14px;
+  color: blue;
+}
+
+#headerTitle {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 16px;
+  margin: 16px auto auto auto;
+}
+
+.block3 {
+  width: 33%;
+  float: left;
+}
+
+.textCener {
+  text-align: center;
+}
+
+#logNav {
+  background: black none;
+}
+
+
+

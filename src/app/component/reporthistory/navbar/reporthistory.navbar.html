@@ -1,0 +1,24 @@
+<!-------------------------->
+<!--ナビゲーションバー-->
+<!-------------------------->
+<nav
+  class="navbar navbar-default navbar-fixed-top myNavbar"
+  role="navigation">
+  <div class="block3">
+    <div class="navbar-header">
+      <!--左端エリア-->
+      <div class="navbar-brand"
+           (click)="$event.preventDefault()">
+        <a href="#"
+           (click)="onMenuClick('back',$event)">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          戻る　
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="block3 textCener">
+    <div id="headerTitle">報告履歴</div>
+  </div>
+
+</nav>

@@ -1,0 +1,124 @@
+<div bsModal
+     #inputModal="bs-modal"
+     class="modal"
+     [config]="{
+     backdrop: 'static',
+     keyboard: false,
+    ignoreBackdropClick: true
+     }"
+>
+  <div class="panel panel-default myPanel  mySmallPanel">
+    <!--タイトルバー-->
+    <div class="panel-heading text-center myPanelTitlebar">
+      報告入力
+    </div>
+
+    <!--ダイアログボックスの内容-->
+    <div class="panel-body form-group-lg">
+
+      <!--表題入力欄-->
+      <p class="input-group input-group-lg">
+        <span class="input-group-btn">
+        <button
+          id="titleButton"
+          (click)="isCollapsed = !isCollapsed"
+          class="btn btn-active btn-success"
+        >
+          表題
+        </button>
+      </span>
+        <input
+          [ngModel]="tempReport.title"
+          (ngModelChange)="tempReport.title=$event;onChangeReport()"
+          type="text"
+          id="reportTitle"
+          class="form-control">
+      </p>
+
+      <!--表題選択-->
+      <div [collapse]="isCollapsed">
+        <table
+          id="titleList"
+          (click)="isCollapsed = !isCollapsed"
+          class="table table-bordered mySelectTable ">
+          <tbody class="myTableHover">
+          <tr *ngFor="let item of ['新規開拓', 'キャンペーン', 'クレーム対応', 'その他']">
+            <td (click)="tempReport.title=item;onChangeReport($event)">
+              {{item}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!--報告文入力欄-->
+      <p>
+      <textarea
+        [ngModel]="tempReport.reportStr"
+        (ngModelChange)="tempReport.reportStr=$event;onChangeReport()"
+        placeholder="報告文を入力"
+        rows="4"
+        class="form-control"
+        id="inputTextarea">
+      </textarea>
+      </p>
+
+      <!--操作ボタン-->
+      <p>
+        <button
+          id="sendButton"
+          class="btn btn-success"
+          (click)="onClickButton('send')">
+          送　信
+        </button>
+        <button
+          id="cancelButton"
+          class="btn btn-danger"
+          (click)="onClickButton('delete')">
+          削　除
+        </button>
+        <!--写真選択ボタン-->
+        <button
+          class="btn btn-info"
+          id="file-picker"
+          (click)="onClickButton('photo')">
+          <span class="glyphicon glyphicon-camera"></span>
+        </button>
+
+        <!--写真削除ボタン-->
+        <button
+          id="deletePhotoButton"
+          class="btn btn-default"
+          *ngIf="tempPhoto"
+          (click)="onClickButton('photoDelete')">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+
+      </p>
+      <!--写真読み込み中メッセージ表示-->
+      <div
+        *ngIf="isWaiting"
+        class="alert alert-info" role="alert">
+        ファイル読み込み中
+      </div>
+
+      <!--添付写真表示エリア-->
+      <p *ngIf="tempPhoto">
+        <img
+          [src]="tempPhoto"
+          class="myImage">
+      </p>
+
+      <div style="text-align : right ;">
+        <input
+          type="file"
+          id="fileSelect"
+          class=""
+          style="opacity:0;height:0px;width: 0px;"
+          #refFileSelect
+        >
+      </div>
+
+    </div>
+  </div>
+</div>

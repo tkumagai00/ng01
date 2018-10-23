@@ -1,0 +1,51 @@
+<div class="waitIcon" *ngIf="!isLoaded"></div>
+<div id="main"
+     (window:scroll)="onScroll($event)"
+>
+
+  <table
+    class="table table-striped table-bordered"
+    #dataTable>
+    <!-------------------------->
+    <!--PC用-->
+    <!-------------------------->
+    <tbody
+      id="pc_table"
+      *ngIf="!isMobile">
+    <tr *ngFor="let obj of currentBuffer;let num=index"
+        [id]="'row'+(num+1)">
+      <td class="td1">{{obj.id}}</td>
+      <td class="td2"><img [src]="'data:image/jpeg;base64,'+obj.sm"></td>
+      <td class="td3"><span class="middle">{{obj.strDate}}<br>
+              {{obj.category}}<br></span>
+        {{obj.report}}
+      </td>
+    </tr>
+    </tbody>
+
+    <!-------------------------->
+    <!--モバイル用-->
+    <!-------------------------->
+    <tbody
+      id="mobile_table"
+      *ngIf="isMobile"
+      class="myTableHover">
+    <tr *ngFor="let obj of currentBuffer;let num=index;"
+        [id]="'row'+(num+1)">
+      <td class="td1">
+        <img [src]="'data:image/jpeg;base64,'+obj.sm">
+      </td>
+      <td class="td2">
+        <span class="small">
+          #{{obj.id}}｜{{obj.strDate}}｜{{obj.category}}
+        </span>
+        <br />
+        <span class="small">
+              {{obj.report.slice(0,50)}}</span>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+
+</div>

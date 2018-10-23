@@ -1,0 +1,68 @@
+<!-------------------------->
+<!--PC用-->
+<!-------------------------->
+<!--表の定義-->
+<table
+  id="customerListTable"
+  *ngIf="!(isMobile)"
+  class="table table-bordered table-striped ">
+  <!--ヘッダ部分-->
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>{{"labelName" | translater:locale}}</th>
+    <th>{{"labelTel" | translater:(locale)}}</th>
+    <th>{{"labelAddress" | translater:(locale)}}</th>
+    <th>{{"labelUpdateTime" |translater:(locale)}}</th>
+  </tr>
+  </thead>
+  <!--データ部分-->
+  <tbody class="myTableHover">
+  <!--データ表示行-->
+  <tr
+    *ngFor="let customer of
+      (customers) | customerFilter: searchWord ;"
+    class="datarow"
+    (click)="onListClick(customer)">
+    <td>{{customer.id}}</td>
+    <td>{{customer.name_i18n}}
+      <span
+        *ngIf="customer.reportNum"
+        class="badge myBadge">
+        {{customer.reportNum || ""}}
+      </span>
+    </td>
+    <td>{{customer.tel}}</td>
+    <td>{{customer.address_i18n}}</td>
+    <td>{{customer.updateTime | i18nDate: (locale)}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<!-------------------------->
+<!--モバイル用-->
+<!-------------------------->
+<!--表の定義-->
+<table
+  *ngIf="isMobile"
+  class="table table-bordered table-striped">
+  <!--データ部分-->
+  <tbody class="myTableHover">
+  <!--データ表示行-->
+  <tr
+    *ngFor="let customer of
+      customers | customerFilter: searchWord;" class="datarow"
+    (click)="onListClick(customer)">
+    <td>
+      <span class="myMobileLargeText">
+        {{customer.name_i18n}}
+      </span>
+      <span *ngIf="customer.reportNum" class="badge myBadge">
+        {{customer.reportNum}}
+      </span><br>
+      {{customer.address_i18n}}
+    </td>
+  </tr>
+  </tbody>
+</table>
+

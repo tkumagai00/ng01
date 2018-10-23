@@ -1,0 +1,85 @@
+<!-------------------------->
+<!--ナビゲーションバー-->
+<!-------------------------->
+<nav-customerdetail>
+</nav-customerdetail>
+
+<!--未送信件数表示-->
+<uploadQueue></uploadQueue>
+
+<!-------------------------->
+<!--PC ２カラムレイアウト-->
+<!-------------------------->
+<div *ngIf="!(isMobile$ | async)">
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <!-------------------------->
+      <!--左カラム-->
+      <!-------------------------->
+
+      <div class="col-xs-12 col-sm-6">
+
+        <!--顧客の基本情報-->
+        <h3>基本情報</h3>
+        <customer-info [customer]="selectedCustomer$|async">
+        </customer-info>
+
+        <!--グラフ-->
+        <h3>売上推移</h3>
+        <sales-chart [customer]="selectedCustomer$|async">
+        </sales-chart>
+      </div>
+
+      <!-------------------------->
+      <!--右カラム-->
+      <!-------------------------->
+      <div class="col-xs-12 col-sm-6">
+
+        <h3>営業報告</h3>
+        <!--営業報告の一覧-->
+        <report-list
+          [reports]="reports$|async"
+          [locale]="locale$|async">
+        </report-list>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-------------------------->
+<!--モバイル向けタブ表示ー-->
+<!-------------------------->
+<div *ngIf="(isMobile$|async)">
+  <!--タブの定義-->
+  <tabset>
+
+    <tab heading="基本情報">
+      <customer-info [customer]="(selectedCustomer$|async)">
+      </customer-info>
+    </tab>
+
+    <tab heading="売上推移">
+      <sales-chart [customer]="(selectedCustomer$|async)">
+      </sales-chart>
+    </tab>
+
+    <tab heading="報告一覧">
+      <report-list
+        [reports]="reports$|async"
+        [locale]="locale$|async">
+      </report-list>
+    </tab>
+
+  </tabset>
+</div>
+<!-------------------------->
+<!--報告入力コンポーネント-->
+<!-------------------------->
+<input-modal
+  [tempReport]="tempReport$|async"
+  [tempPhoto]="tempPhoto$|async">
+</input-modal>

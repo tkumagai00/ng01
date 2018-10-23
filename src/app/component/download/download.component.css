@@ -1,0 +1,26 @@
+/*ボタン*/
+ .btn-block {
+	height: 2.3em;
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 0;
+}
+
+/*表示位置（水平方向中央）*/
+.myPanel {
+  margin: 0 auto 0 auto;
+  position: relative;
+  top: -50px;
+}
+
+/*パネルのサイズ（小）*/
+ .mySmallPanel {
+	width: 320px;
+}
+
+/* タイトルバー*/
+ .myPanelTitlebar {
+	background: steelblue none  !important;
+	color: white  !important;
+}
+

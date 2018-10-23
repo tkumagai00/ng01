@@ -1,0 +1,22 @@
+<!-------------------------->
+<!--Navigation Bar        -->
+<!-------------------------->
+<my-customerlist-navbar
+  [locale]="locale$|async"
+  [searchWord]="searchWord$|async"
+  [isMobile]="isMobile$|async"
+  [isEnableSnapshot]="isEnableSnapshot$|async"
+></my-customerlist-navbar>
+
+<!--未送信件数表示-->
+<uploadQueue></uploadQueue>
+
+<!-------------------------->
+<!--顧客リスト -->
+<!-------------------------->
+<my-customerlist-list
+  [locale]="locale$|async"
+  [customers]="customers$|async"
+  [isMobile]="isMobile$|async"
+  [searchWord]="searchWord$|async"
+></my-customerlist-list>

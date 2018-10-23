@@ -1,0 +1,9 @@
+div {
+  font-size: 20px;
+  background-color: silver;
+  color: maroon;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0 5px 0;
+  width: 100%
+}

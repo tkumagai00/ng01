@@ -1,0 +1,36 @@
+<table
+  class="table table-bordered table-stripe myTwoColumnTable"
+  *ngIf="customer?.id">
+  <tr>
+    <td>顧客番号</td>
+    <td>{{customer?.id}}</td>
+  </tr>
+  <tr>
+    <td>顧客名</td>
+    <td>{{customer?.name}}</td>
+  </tr>
+  <tr>
+    <td>電話番号</td>
+    <td>{{customer?.tel}}</td>
+  </tr>
+  <tr>
+    <td>住所</td>
+    <td>{{customer?.address}}</td>
+  </tr>
+  <tr>
+    <td>購買担当</td>
+    <td>{{customer?.person}}</td>
+  </tr>
+  <tr>
+    <td>PC関連売上(万円/月)</td>
+    <td>{{customer?.pc}}</td>
+  </tr>
+  <tr>
+    <td>文具,家具売上(万円/月)</td>
+    <td>{{customer?.goods}}</td>
+  </tr>
+  <tr>
+    <td>サービス売上(万円/月)</td>
+    <td>{{customer?.service}}</td>
+  </tr>
+</table>

@@ -1,0 +1,47 @@
+
+/*==============================*/
+/*報告入力画面*/
+/*==============================*/
+/*表題選択*/
+.mySelectTable td {
+  background-color: lightsteelblue;
+}
+
+/*表題選択（マウスオーバー）*/
+.mySelectTable td:hover {
+  color: red;
+  background-color: silver;
+}
+
+/* ボタン選択の枠を非表示 */
+.btn:focus {
+  outline: none;
+}
+
+/*　添付写真　*/
+.myImage {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/*==============================*/
+/*ダイアログボックス（パネル)*/
+/*==============================*/
+/*表示位置（水平方向中央）*/
+.myPanel {
+  margin: 0 auto 0 auto;
+}
+
+/*パネルのサイズ（小）*/
+.mySmallPanel {
+  width: 320px;
+}
+
+/* タイトルバー*/
+.myPanelTitlebar {
+  background: steelblue none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  color: white;
+}
+

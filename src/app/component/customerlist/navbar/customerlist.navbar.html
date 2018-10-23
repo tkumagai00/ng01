@@ -1,0 +1,58 @@
+<nav
+  class="navbar navbar-default navbar-fixed-top myNavbar"
+  role="navigation"
+>
+  <div class="navbar-header">
+    <!--左端エリア-->
+    <div class="navbar-brand">
+      <!--検索文字入力欄-->
+      <input #searchInput
+             type="text"
+             [ngModel]="searchWord"
+             (ngModelChange)="onChangeSearchWord($event)"
+             placeholder="{{'labelSearch' | translater:(locale)}}"
+             class="mySearchBox">
+
+      <!--言語切り替えボタン-->
+      <div class="btn-group" role="group">
+        <button type="button"
+                (click)="onLocaleChange('ja-jp')"
+                class="btn btn-default"
+                [ngClass]="{'btn-success': ((locale)==='ja-jp')}">
+          日本
+        </button>
+        <button type="button"
+                (click)="onLocaleChange('en-us')"
+                class="btn btn-default"
+                [ngClass]="{'btn-success' :((locale)==='en-us')}">
+          ＵＳ
+        </button>
+      </div>
+    </div>
+
+
+    <button type="button" class="navbar-toggle"
+            data-toggle="collapse"
+            (click)="isCollapsed = !isCollapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+  </div>
+  <!--メニュー項目の定義-->
+  <div [collapse]="isCollapsed"
+       class="collapse navbar-collapse"
+       (click)="$event.preventDefault()">
+    <ul class="nav navbar-nav">
+      <li class="navbar-separater-RL">
+        <a href="#"
+           id="logoutMenu"
+           (click)="logout();isCollapsed = !isCollapsed">
+          {{"labelLogout" | translater:(locale)}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
